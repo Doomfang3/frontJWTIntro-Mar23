@@ -12,7 +12,7 @@ const DetailsPage = () => {
 
   const fetchRecipe = async () => {
     try {
-      const response = await fetch(`http://localhost:5005/api/recipes/${recipeId}`, {
+      const response = await fetch(`${import.meta.env.VITE_BASE_API_URL}/api/recipes/${recipeId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -39,7 +39,7 @@ const DetailsPage = () => {
 
   const handleDelete = async () => {
     try {
-      const response = await fetch(`http://localhost:5005/api/recipes/${recipeId}`, {
+      const response = await fetch(`${import.meta.env.VITE_BASE_API_URL}/api/recipes/${recipeId}`, {
         method: 'DELETE',
       })
       if (response.status === 200) {
