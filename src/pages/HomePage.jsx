@@ -5,7 +5,7 @@ const HomePage = () => {
   const [recipes, setRecipes] = useState([])
 
   const fetchRecipes = async () => {
-    const response = await fetch('http://localhost:5005/api/recipes')
+    const response = await fetch(`${import.meta.env.VITE_BASE_API_URL}/api/recipes`)
     const parsed = await response.json()
     setRecipes(parsed)
   }
